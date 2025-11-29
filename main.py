@@ -31,6 +31,9 @@ def modulus(new_numbers):
         total = total % number
     return  total
 
+def power(new_numbers):
+    return new_numbers[0] ** new_numbers[1]
+
 def exit_program():
     quit()
 
@@ -82,8 +85,8 @@ def main():
                         print(f"\nInvalid input {e.args[0]}. Please enter numbers only, seperated with a space.")
                         continue
 
-                    if menu_choice == "modulus" and len(new_number_list) != 2:
-                        print("\nModulus requires exactly two numbers")
+                    if (menu_choice == "modulus" or menu_choice == "power") and len(new_number_list) != 2:
+                        print(f"\n{menu_choice.title()} requires exactly two numbers")
                         continue
 
                     if menu_choice == "divide" and 0 in new_number_list[1:]:
@@ -109,6 +112,7 @@ calculator_operations_dict = {
     "multiply": multiply,
     "divide": divide,
     "modulus": modulus,
+    "power": power,
 }
 
 calculator_display_list = [
@@ -118,5 +122,6 @@ calculator_display_list = [
     {"key": "multiply", "name": "MULTIPLY", "symbol": "x"},
     {"key": "divide", "name": "DIVIDE", "symbol": "/"},
     {"key": "modulus", "name": "MODULUS", "symbol": "%"},
+    {"key": "power", "name": "POWER", "symbol": "^"}
 ]
 main()
