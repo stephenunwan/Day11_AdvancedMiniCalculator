@@ -34,6 +34,9 @@ def modulus(new_numbers):
 def power(new_numbers):
     return new_numbers[0] ** new_numbers[1]
 
+def square(new_numbers):
+    return new_numbers[0] ** 2
+
 def exit_program():
     quit()
 
@@ -89,6 +92,10 @@ def main():
                         print(f"\n{menu_choice.title()} requires exactly two numbers")
                         continue
 
+                    if menu_choice == "square" and len(new_number_list) != 1:
+                        print("Square requires exactly one number.")
+                        continue
+
                     if menu_choice == "divide" and 0 in new_number_list[1:]:
                         print("\nYou can not divide by zero")
                         continue                
@@ -113,6 +120,7 @@ calculator_operations_dict = {
     "divide": divide,
     "modulus": modulus,
     "power": power,
+    "square": square,
 }
 
 calculator_display_list = [
@@ -122,6 +130,7 @@ calculator_display_list = [
     {"key": "multiply", "name": "MULTIPLY", "symbol": "x"},
     {"key": "divide", "name": "DIVIDE", "symbol": "/"},
     {"key": "modulus", "name": "MODULUS", "symbol": "%"},
-    {"key": "power", "name": "POWER", "symbol": "^"}
+    {"key": "power", "name": "POWER", "symbol": "^"},
+    {"key": "square", "name": "SQUARE", "symbol":"^2"},
 ]
 main()
