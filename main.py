@@ -100,7 +100,7 @@ def main():
         except ValueError:
             print("\n\nInvalid input. Please enter a valid option number.\n\n")
 
-
+#Code
 print("\nWelcome! This is a Simple Calculator.\n")
 calculator_operations_dict = {
     "exit": exit_program,
